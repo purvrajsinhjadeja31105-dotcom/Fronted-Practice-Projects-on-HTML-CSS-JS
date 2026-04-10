@@ -250,6 +250,13 @@ searchInput.addEventListener('keypress', (e) => {
   }
 });
 
+// Watch for when the user clears the search box
+searchInput.addEventListener('input', () => {
+  if (searchInput.value.trim() === '') {
+    fetchRecipes('');
+  }
+});
+
 closeModalBtn.addEventListener('click', closeModal);
 
 recipeModal.addEventListener('click', (e) => {
