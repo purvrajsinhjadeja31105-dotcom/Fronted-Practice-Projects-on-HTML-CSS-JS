@@ -9,3 +9,4 @@ https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTM
 https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTML-CSS-JS/how%20old%20am%20I/
 
 ## Recipe Page
+https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTML-CSS-JS/Recipe%20Page/
