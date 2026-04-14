@@ -1,0 +1,230 @@
+:root {
+  --primary-color: #3b82f6; /* Professional True Blue */
+  --primary-hover: #2563eb;
+  --primary-glow: rgba(59, 130, 246, 0.4);
+  --bg-dark: #0f172a; /* Slate 900 */
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  background: radial-gradient(circle at top right, #1e293b, var(--bg-dark));
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+.testominal-container {
+  width: 90%;
+  max-width: 600px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 60px 40px 40px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  /* Removed overflow: hidden to prevent image getting cut off */
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+  opacity: 0.15; /* Much softer and highly professional glow */
+  filter: blur(40px);
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateZ(60px);
+  top: -50px;
+  border: 4px solid var(--bg-dark);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  z-index: 10;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+  transform: translateZ(30px);
+}
+
+.content.fade {
+  opacity: 0;
+}
+
+.quote-icon {
+  font-size: 28px;
+  color: var(--primary-color);
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-weight: 300;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.username {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Navigation Controls */
+.nav-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+  z-index: 1;
+  transform: translateZ(20px);
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.nav-btn:hover {
+  background: var(--primary-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--primary-glow);
+  border-color: var(--primary-color);
+}
+
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.dot.active {
+  background: var(--primary-color);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: var(--primary-color);
+  width: 0;
+  opacity: 0.8;
+  border-radius: 0 0 24px 24px;
+}
+
+.progress-bar.active {
+  animation: progress 6s linear forwards;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testominal-container {
+    padding: 50px 20px 30px;
+    margin-top: 40px;
+    max-width: 90%;
+  }
+
+  .text {
+    font-size: 1rem;
+    min-height: 120px;
+  }
+
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .photo {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+  }
+}
