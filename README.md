@@ -5,7 +5,7 @@
 ## testimonial page
 https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTML-CSS-JS/testimonial-page/
 
-## how old i am
+## how old am I
 https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTML-CSS-JS/how%20old%20am%20I/
 
 ## Recipe Page
