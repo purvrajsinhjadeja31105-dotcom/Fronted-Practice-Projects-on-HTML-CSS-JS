@@ -10,3 +10,6 @@ https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTM
 
 ## Recipe Page
 https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTML-CSS-JS/Recipe%20Page/
+
+## Rock Paper Scissor Game
+https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTML-CSS-JS/Rock%20Paper%20Scissor/
