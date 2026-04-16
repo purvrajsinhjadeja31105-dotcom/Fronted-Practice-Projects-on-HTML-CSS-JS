@@ -13,3 +13,6 @@ https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTM
 
 ## Rock Paper Scissor Game
 https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTML-CSS-JS/Rock%20Paper%20Scissor/
+
+## Simpler Timer
+https://purvrajsinhjadeja31105-dotcom.github.io/Fronted-Practice-Projects-on-HTML-CSS-JS/timer/
