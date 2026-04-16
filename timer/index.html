@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Timer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1 class="title">Simple Timer</h1>
+      <p class="subtitle">Track your time with ease</p>
+    </header>
+    
+    <section class="timer-section">
+      <div class="timer-display">
+        <div class="timer-label">Time</div>
+        <div class="timer">00:00:00</div>
+      </div>
+    </section>
+    
+    <section class="controls">
+      <div class="button-group">
+        <button id="start" class="btn btn-primary">
+          <span class="btn-icon">Start</span>
+        </button>
+        <button id="stop" class="btn btn-secondary" disabled>
+          <span class="btn-icon">Stop</span>
+        </button>
+        <button id="reset" class="btn btn-tertiary">
+          <span class="btn-icon">Reset</span>
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
