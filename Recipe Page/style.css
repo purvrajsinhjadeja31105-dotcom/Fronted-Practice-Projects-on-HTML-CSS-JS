@@ -1,0 +1,355 @@
+:root {
+  --primary-dark: #1F6F5F;
+  /* rgb(31, 111, 95) */
+  --primary-light: #2FA084;
+  /* rgb(47, 160, 132) */
+  --accent: #6FCF97;
+  /* rgb(111, 207, 151) */
+  --bg-light: #EEEEEE;
+  /* rgb(238, 238, 238) */
+  --text-dark: #333333;
+  --text-light: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #154c41 100%);
+  color: var(--text-light);
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header-content h1 {
+  font-size: 42px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header-content p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+#search-input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-family: inherit;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+  box-shadow: 0 4px 20px var(--accent);
+}
+
+#search-btn {
+  padding: 15px 30px;
+  background-color: var(--primary-light);
+  color: var(--text-light);
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: inherit;
+}
+
+#search-btn:hover {
+  background-color: var(--accent);
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: 50vh;
+}
+
+#loading {
+  text-align: center;
+  font-size: 20px;
+  color: var(--primary-dark);
+  font-weight: 600;
+  margin-top: 40px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recipe-item {
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(31, 111, 95, 0.2);
+}
+
+.recipe-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 4px solid var(--accent);
+}
+
+.recipe-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.recipe-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  color: var(--primary-dark);
+}
+
+.recipe-content p.category {
+  font-size: 14px;
+  color: var(--primary-light);
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.view-btn {
+  margin-top: auto;
+  background-color: var(--primary-light);
+  color: var(--text-light);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  width: 100%;
+}
+
+.view-btn:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 5px 15px rgba(31, 111, 95, 0.3);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--bg-light);
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 20px;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.4s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-btn:hover {
+  color: var(--primary-dark);
+  background: var(--accent);
+}
+
+.modal-header-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  position: relative;
+}
+
+.modal-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to bottom, rgba(31, 111, 95, 0.2), rgba(31, 111, 95, 0.9));
+}
+
+.modal-title-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  color: var(--text-light);
+}
+
+.modal-title-wrapper h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.modal-body-content {
+  padding: 30px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background: var(--primary-light);
+  color: var(--text-light);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.recipe-section {
+  margin-bottom: 30px;
+}
+
+.recipe-section h3 {
+  color: var(--primary-dark);
+  font-size: 22px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.ingredients-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.ingredients-list li {
+  background: #FFF;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  border-left: 4px solid var(--primary-light);
+  align-items: center;
+}
+
+.instructions {
+  line-height: 1.8;
+  color: #444;
+  font-size: 16px;
+  white-space: pre-line;
+}
+
+@media screen and (max-width: 768px) {
+  .header-content h1 {
+    font-size: 32px;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  #search-btn {
+    width: 100%;
+  }
+
+  .modal-title-wrapper h2 {
+    font-size: 24px;
+  }
+
+  .modal-header-img,
+  .modal-header-overlay {
+    height: 200px;
+  }
+}

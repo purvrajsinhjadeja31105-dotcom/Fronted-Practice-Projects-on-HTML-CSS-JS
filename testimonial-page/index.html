@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="A beautiful and responsive testimonials display">
+  <meta name="theme-color" content="#0f172a">
+  <title>Premium Testimonials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="testominal-container">
+    <div class="glow"></div>
+    <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80" alt="user-image" class="photo">
+
+    <div class="content">
+      <i class="fas fa-quote-left quote-icon"></i>
+      <p class="text">This is simply unbelievable! I would be lost without Apple. The very best. Not able to tell you how happy I am with Apple.</p>
+      <h4 class="username">Cherise G</h4>
+      <p class="role">Verified Customer</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-controls">
+      <button id="prevBtn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+      <div id="dots-container" class="dots"></div>
+      <button id="nextBtn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
